@@ -90,7 +90,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
             className: `absolute left-1/2 top-1/2 flex cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden rounded-[32px] border border-white/10 p-6 text-center shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] transition-[transform,opacity,border-color] ${
               dragging
                 ? "duration-0"
-                : "duration-[1000ms] ease-[cubic-bezier(0.45,0.05,0.2,1)]"
+                : "duration-[650ms] ease-[cubic-bezier(0.25,0.8,0.25,1)]"
             } ${
               offset === 0 ? "hover:border-white/30" : ""
             }`,
@@ -98,14 +98,14 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
           const inner = (
             <>
               <span
-                className={`text-xl font-semibold leading-tight tracking-tight text-white transition-opacity duration-500 ${
+                className={`text-xl font-semibold leading-tight tracking-tight text-white transition-opacity duration-300 ${
                   offset === 0 ? "opacity-100" : "opacity-0"
                 }`}
               >
                 {p.title}
               </span>
               <span
-                className={`text-[12px] text-white/60 transition-opacity duration-500 ${
+                className={`text-[12px] text-white/60 transition-opacity duration-300 ${
                   offset === 0 ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -186,7 +186,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
           <div
             key={p.title}
             aria-hidden={i !== active}
-            className={`col-start-1 row-start-1 flex flex-col items-center gap-3 text-center transition-all duration-700 ease-out ${
+            className={`col-start-1 row-start-1 flex flex-col items-center gap-3 text-center transition-all duration-500 ease-out ${
               i === active
                 ? "translate-y-0 opacity-100"
                 : "pointer-events-none translate-y-2 opacity-0"
