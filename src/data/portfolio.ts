@@ -104,29 +104,49 @@ export const projects: Project[] = [
     tags: ["UI/UX", "Figma"],
   },
   {
+    title: "Basic Web Redesign",
+    category: "Design",
+    href: "https://marcimetzger-ashen.vercel.app/",
+    description:
+      "A homepage redesign for Marci Metzger Homes: a cleaner layout, clearer hierarchy and a responsive build, taken from wireframe to a live preview.",
+    tags: ["UI/UX", "Web design"],
+  },
+  {
+    title: "Aspire by Filinvest",
+    category: "Web",
+    href: "https://aspirebyfilinvest.com/",
+    description:
+      "Responsive front-end work on the Aspire by Filinvest website in Next.js, React, TypeScript and Tailwind CSS: property listings with search, filtering and pagination, reusable property cards, Payload CMS content, and faster WebP-optimized images.",
+    tags: ["Next.js", "Payload CMS"],
+  },
+  {
+    title: "Futura by Filinvest",
+    category: "Web",
+    href: "https://futurabyfilinvest.com/",
+    description:
+      "Responsive front-end work on the Futura by Filinvest website in Next.js, React, TypeScript and Tailwind CSS: property listings with search, filtering and pagination, reusable property cards, Payload CMS content, and faster WebP-optimized images.",
+    tags: ["Next.js", "Payload CMS"],
+  },
+  {
+    title: "Prestige by Filinvest",
+    category: "Web",
+    href: "https://prestigebyfilinvest.com/",
+    description:
+      "Responsive front-end work on the Prestige by Filinvest website in Next.js, React, TypeScript and Tailwind CSS: property listings with search, filtering and pagination, reusable property cards, Payload CMS content, and faster WebP-optimized images.",
+    tags: ["Next.js", "Payload CMS"],
+  },
+  {
     title: "Jetour Flight Booking System",
     category: "Web",
+    href: "https://jetour-flight-booking-system-lbfc.vercel.app/",
     description:
       "A web-based flight booking system where users search available flights, manage passenger information and complete bookings, with responsive interfaces and backend support for schedules and reservations.",
     tags: ["Full-stack", "Booking"],
   },
   {
-    title: "STI Chatbot System",
-    category: "AI",
-    description:
-      "An AI-powered chatbot that answers common student inquiries and provides automated assistance, with workflows and a backend for managing responses and school information.",
-    tags: ["AI", "Chatbot"],
-  },
-  {
-    title: "Mapua Docking System",
-    category: "Web",
-    description:
-      "A docking and monitoring system for managing device and equipment connections, availability and status, with an organized interface that simplifies day-to-day operations.",
-    tags: ["System", "Monitoring"],
-  },
-  {
     title: "Global Currency Invoice Processor",
     category: "Dashboards",
+    href: "https://voiceprocessor-phi.vercel.app/",
     description:
       "An invoice dashboard that retrieves live exchange rates, converts multi-currency invoices, calculates outstanding balances and persists invoice records locally.",
     tags: ["Dashboard", "Live rates"],
@@ -136,14 +156,14 @@ export const projects: Project[] = [
     category: "Dashboards",
     description:
       "A dashboard for analyzing developer activity and insights from GitHub data.",
-    tags: ["Dashboard", "GitHub"],
+    tags: ["Dashboard", "GitHub", "In development"],
   },
   {
     title: "Country Intelligence & Weather Dashboard",
     category: "Dashboards",
     description:
       "A dashboard combining live geographic and weather data from multiple APIs, with search, regional filtering, sorting, detailed views and persistent favorites.",
-    tags: ["Dashboard", "APIs"],
+    tags: ["Dashboard", "APIs", "In development"],
   },
 ];
 
