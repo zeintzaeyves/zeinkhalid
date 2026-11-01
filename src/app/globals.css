@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: #0d0d0d;
+  --color-surface-raised: #161616;
+  --color-line: rgb(255 255 255 / 0.14);
+  --color-muted: rgb(255 255 255 / 0.5);
+  --color-subtle: rgb(255 255 255 / 0.35);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  color-scheme: dark;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+/* iOS-style scrollbars: slim, rounded, translucent, no track. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.22) transparent;
+}
+
+@supports selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(255 255 255 / 0.2);
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+    transition: background-color 0.2s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(255 255 255 / 0.4);
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background-color: rgb(255 255 255 / 0.55);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --ease-ios: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Default motion for every interactive element; utility classes still win. */
+@layer base {
+  a,
+  button,
+  [role="button"],
+  summary,
+  input {
+    transition-property: color, background-color, border-color, opacity,
+      transform, box-shadow;
+    transition-duration: 220ms;
+    transition-timing-function: var(--ease-ios);
+  }
+
+  button:not(:disabled):active,
+  [role="button"]:active {
+    transform: scale(0.97);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Each block of a page eases in one after another (a soft cascade). */
+.page-in > * {
+  animation: page-in 900ms cubic-bezier(0.25, 0.8, 0.25, 1) backwards;
+}
+.page-in > :nth-child(2) { animation-delay: 80ms; }
+.page-in > :nth-child(3) { animation-delay: 160ms; }
+.page-in > :nth-child(4) { animation-delay: 240ms; }
+.page-in > :nth-child(5) { animation-delay: 320ms; }
+.page-in > :nth-child(n + 6) { animation-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.ask-md > * + * {
+  margin-top: 0.6em;
+}
+.ask-md ul,
+.ask-md ol {
+  padding-left: 1.2em;
+}
+.ask-md ul {
+  list-style: disc;
+}
+.ask-md ol {
+  list-style: decimal;
+}
+.ask-md a {
+  color: #e68600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ask-md table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.ask-md th,
+.ask-md td {
+  border: 1px solid rgb(255 255 255 / 0.14);
+  padding: 0.35em 0.7em;
+  text-align: left;
+}
+.ask-md code {
+  border-radius: 6px;
+  background: rgb(255 255 255 / 0.1);
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+
+@keyframes ask-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ask-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes msg-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ask-dot {
+  0%,
+  60%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes ask-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
