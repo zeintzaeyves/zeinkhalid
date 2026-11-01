@@ -3,7 +3,6 @@
 import { useState } from "react";
 import NavItem from "./NavItem";
 import { Mail } from "lucide-react";
-import Avatar from "./Avatar";
 import { email, navGroups } from "@/data/portfolio";
 
 // Flat surface for the Ask Zein pill.
@@ -33,9 +32,9 @@ export default function Sidebar() {
     <>
       {/* Mobile top bar */}
       <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-line bg-black/90 px-4 py-2 backdrop-blur lg:hidden">
-        <div className="flex min-w-0 items-center gap-2">
-          <Avatar className="size-7 rounded-lg" sizes="28px" />
-          <span className="truncate text-sm font-medium">Zein Khalid</span>
+        <div className="min-w-0 leading-tight">
+          <p className="truncate text-sm font-medium">Zein Khalid</p>
+          <p className="truncate text-[11px] text-subtle">AI-First Software Developer</p>
         </div>
         <button
           type="button"
@@ -62,22 +61,9 @@ export default function Sidebar() {
           open ? "translate-x-0" : "-translate-x-[110%]"
         }`}
       >
-        <div className="flex items-start justify-between gap-2 px-1">
-          <div className="flex items-center gap-2.5">
-            <Avatar className="size-8 rounded-lg" sizes="32px" />
-            <div className="leading-tight">
-              <p className="text-sm font-medium">Zein Khalid</p>
-              <p className="text-[12px] text-subtle">Personal Workspace</p>
-            </div>
-          </div>
-          <button
-            type="button"
-            aria-label="Collapse navigation"
-            onClick={() => setOpen(false)}
-            className="hidden text-white/70 lg:block"
-          >
-            <PanelToggleIcon />
-          </button>
+        <div className="px-2 leading-tight">
+          <p className="text-[15px] font-medium">Zein Khalid</p>
+          <p className="mt-0.5 text-[12px] text-subtle">AI-First Software Developer</p>
         </div>
 
         <nav className="mt-3 flex-1 space-y-5 overflow-y-auto">
