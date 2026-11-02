@@ -86,35 +86,19 @@ export const projects: Project[] = [
     tags: ["AI", "Next.js"],
   },
   {
-    title: "Filinvest Revamp Websites",
+    title: "Jetour Flight Booking System",
     category: "Web",
-    href: "https://filinvestland.com/",
-    image: "/gallery/fil.jpg",
+    href: "https://jetour-flight-booking-system-lbfc.vercel.app/",
+    image: "/gallery/jetour.png",
     description:
-      "Responsive revamps of the Futura, Aspire and Prestige by Filinvest websites in Next.js, React, TypeScript and Tailwind CSS: property listings with search, filtering and pagination, reusable property cards, Payload CMS content, and faster WebP-optimized images.",
-    tags: ["Next.js", "Futura · Aspire · Prestige"],
-  },
-  {
-    title: "Web Design Projects",
-    category: "Design",
-    href: "https://uibyzein.framer.website/",
-    image: "/gallery/peaky.jpg",
-    description:
-      "Client websites and product interfaces designed from wireframe to high-fidelity Figma handoff, including landing pages, portfolio sites, e-commerce interfaces and a homepage revamp for Marci Metzger Homes.",
-    tags: ["UI/UX", "Figma"],
-  },
-  {
-    title: "Basic Web Redesign",
-    category: "Design",
-    href: "https://marcimetzger-ashen.vercel.app/",
-    description:
-      "A homepage redesign for Marci Metzger Homes: a cleaner layout, clearer hierarchy and a responsive build, taken from wireframe to a live preview.",
-    tags: ["UI/UX", "Web design"],
+      "A web-based flight booking system where users search available flights, manage passenger information and complete bookings, with responsive interfaces and backend support for schedules and reservations.",
+    tags: ["Full-stack", "Booking"],
   },
   {
     title: "Aspire by Filinvest",
     category: "Web",
     href: "https://aspirebyfilinvest.com/",
+    image: "/gallery/aspire.png",
     description:
       "Responsive front-end work on the Aspire by Filinvest website in Next.js, React, TypeScript and Tailwind CSS: property listings with search, filtering and pagination, reusable property cards, Payload CMS content, and faster WebP-optimized images.",
     tags: ["Next.js", "Payload CMS"],
@@ -123,6 +107,7 @@ export const projects: Project[] = [
     title: "Futura by Filinvest",
     category: "Web",
     href: "https://futurabyfilinvest.com/",
+    image: "/gallery/futura.png",
     description:
       "Responsive front-end work on the Futura by Filinvest website in Next.js, React, TypeScript and Tailwind CSS: property listings with search, filtering and pagination, reusable property cards, Payload CMS content, and faster WebP-optimized images.",
     tags: ["Next.js", "Payload CMS"],
@@ -131,25 +116,27 @@ export const projects: Project[] = [
     title: "Prestige by Filinvest",
     category: "Web",
     href: "https://prestigebyfilinvest.com/",
+    image: "/gallery/prestige.png",
     description:
       "Responsive front-end work on the Prestige by Filinvest website in Next.js, React, TypeScript and Tailwind CSS: property listings with search, filtering and pagination, reusable property cards, Payload CMS content, and faster WebP-optimized images.",
     tags: ["Next.js", "Payload CMS"],
   },
   {
-    title: "Jetour Flight Booking System",
-    category: "Web",
-    href: "https://jetour-flight-booking-system-lbfc.vercel.app/",
-    description:
-      "A web-based flight booking system where users search available flights, manage passenger information and complete bookings, with responsive interfaces and backend support for schedules and reservations.",
-    tags: ["Full-stack", "Booking"],
-  },
-  {
     title: "Global Currency Invoice Processor",
     category: "Dashboards",
     href: "https://voiceprocessor-phi.vercel.app/",
+    image: "/gallery/velora.png",
     description:
       "An invoice dashboard that retrieves live exchange rates, converts multi-currency invoices, calculates outstanding balances and persists invoice records locally.",
     tags: ["Dashboard", "Live rates"],
+  },
+  {
+    title: "Basic Web Redesign",
+    category: "Design",
+    href: "https://marcimetzger-ashen.vercel.app/",
+    description:
+      "A homepage redesign for Marci Metzger Homes: a cleaner layout, clearer hierarchy and a responsive build, taken from wireframe to a live preview.",
+    tags: ["UI/UX", "Web design"],
   },
   {
     title: "GitHub Developer Analyst Dashboard",
@@ -365,7 +352,7 @@ export const services: { title: string; description: string; tools: string[] }[]
 ];
 
 export const projectGradients = [
-  "linear-gradient(160deg,#3a3a3d 0%,#18181b 45%,#e68600 150%)",
+  "linear-gradient(160deg,#3a3a3d 0%,#18181b 45%,#b36800 150%)",
   "linear-gradient(160deg,#1f2a37 0%,#0e1116 50%,#3b82f6 160%)",
   "linear-gradient(160deg,#2b1f33 0%,#120c16 50%,#c026d3 160%)",
   "linear-gradient(160deg,#1c2e26 0%,#0b1310 50%,#10b981 160%)",
@@ -486,7 +473,7 @@ export const howIWork: { title: string; note: string }[] = [
 export const personal = {
   profile: {
     name: "Zein Khalid",
-    role: "AI-first software developer",
+    role: "Full-stack developer and AI engineer",
     city: "Quezon City",
     badge: "Open to work",
     bio: "Front-end and full-stack developer, UI/UX designer, and builder of AI-powered chatbots.",
@@ -598,5 +585,49 @@ export const faqs: { q: string; a: string }[] = [
   {
     q: "What's the best way to reach you?",
     a: "Email is the fastest. You can also message me on LinkedIn or use the form above.",
+  },
+];
+
+export type Testimonial = { quote: string; name: string; tag: string };
+
+/**
+ * Real recommendations only. The Testimonials section on the Overview
+ * stays hidden until this list has at least one entry.
+ */
+export const testimonials: Testimonial[] = [
+  {
+    quote: "Your designs look better than 90% of the websites I’ve seen.",
+    name: "Website Visitor",
+    tag: "Visitor",
+  },
+  {
+    quote: "I just want to say that your website looks amazing, and your projects have some really impressive designs.",
+    name: "Portfolio Visitor",
+    tag: "Visitor",
+  },
+  {
+    quote: "How do you create designs like that in Figma? I can’t seem to make anything like that whenever I try designing.",
+    name: "Developer Peer",
+    tag: "Peer",
+  },
+  {
+    quote: "He’s genuinely kind, approachable, and always willing to help. Even when the work is no longer part of his responsibilities, he still makes time to offer assistance.",
+    name: "Former Client",
+    tag: "Client",
+  },
+  {
+    quote: "The UI and overall system design are impressive. Everything feels thoughtfully designed, visually appealing, and easy to navigate.",
+    name: "STI Client",
+    tag: "STI",
+  },
+  {
+    quote: "The portal was well-built and thoughtfully put together. The overall implementation and user experience were great.",
+    name: "NU Client",
+    tag: "NU",
+  },
+  {
+    quote: "The UI looks great. I honestly don’t have anything to point out.",
+    name: "Filinvest Lead Developer",
+    tag: "Filinvest",
   },
 ];

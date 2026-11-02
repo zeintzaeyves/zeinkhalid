@@ -65,10 +65,10 @@ function answer(q: string): string {
     return `The quickest way is email: ${email}. You can also find me on LinkedIn.`;
   }
   if (has("ai", "llm", "chatbot", "claude")) {
-    return "I'm an AI-first developer: I build LLM-powered chatbots and I'm working toward a career in AI engineering.";
+    return "I'm a full-stack developer and AI engineer: I build LLM-powered chatbots and web products.";
   }
   if (has("hi", "hello", "hey", "who are you", "about you")) {
-    return "Hi! I'm Zein, an AI-first software developer and aspiring AI engineer in Quezon City. Ask me about my work, stack or projects.";
+    return "Hi! I'm Zein, a full-stack developer and AI engineer in Quezon City. Ask me about my work, stack or projects.";
   }
   return `I don't have an answer for that yet. Try asking about my stack, work, projects or availability, or email me at ${email}.`;
 }

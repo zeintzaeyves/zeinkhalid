@@ -18,6 +18,11 @@
 }
 
 html {
+  background-color: #000;
+  background-image:
+    radial-gradient(60rem 40rem at 85% -10%, rgb(179 104 0 / 0.16), transparent 60%),
+    radial-gradient(50rem 40rem at -10% 110%, rgb(179 104 0 / 0.12), transparent 60%);
+  background-attachment: fixed;
   color-scheme: dark;
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
@@ -135,7 +140,7 @@ body {
   list-style: decimal;
 }
 .ask-md a {
-  color: #e68600;
+  color: #b36800;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -205,5 +210,38 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Desktop sidebar minimize */
+@media (min-width: 1024px) {
+  .app-shell {
+    transition: padding-left 200ms ease;
+  }
+  html[data-sidebar="collapsed"] .app-shell {
+    padding-left: 0;
+  }
+}
+
+/* Glass morphism surfaces */
+@layer components {
+  .glass {
+    background: linear-gradient(
+      135deg,
+      rgb(255 255 255 / 0.08),
+      rgb(255 255 255 / 0.025)
+    );
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    backdrop-filter: blur(18px) saturate(150%);
+    border: 1px solid rgb(255 255 255 / 0.12);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.12),
+      0 10px 30px -14px rgb(0 0 0 / 0.7);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  .glass:hover {
+    border-color: rgb(255 255 255 / 0.22);
   }
 }

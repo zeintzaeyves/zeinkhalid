@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { galleryItems, projectGradients } from "@/data/portfolio";
 
@@ -183,7 +184,7 @@ export default function GallerySection() {
               aria-label="Previous"
               className="rounded-full border border-line px-4 py-1.5 text-[13px] text-white/80 transition-colors hover:border-white/40 disabled:opacity-30"
             >
-              ←
+              <ArrowLeft className="size-4" strokeWidth={1.8} aria-hidden />
             </button>
             <button
               type="button"
@@ -199,7 +200,7 @@ export default function GallerySection() {
               aria-label="Next"
               className="rounded-full border border-line px-4 py-1.5 text-[13px] text-white/80 transition-colors hover:border-white/40 disabled:opacity-30"
             >
-              →
+              <ArrowRight className="size-4" strokeWidth={1.8} aria-hidden />
             </button>
           </div>
         </div>

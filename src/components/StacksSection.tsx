@@ -61,7 +61,7 @@ export default function StacksSection() {
                     {group.items.length}
                   </span>
                 </div>
-                <div className="w-full self-start overflow-hidden rounded-2xl border border-line bg-surface">
+                <div className="w-full self-start overflow-hidden rounded-2xl glass">
                   {group.items.map((item, n) => (
                     <div
                       key={item}

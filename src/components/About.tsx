@@ -2,10 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 import Avatar from "./Avatar";
-import { email, linkedin } from "@/data/portfolio";
+import { email, linkedin, projects } from "@/data/portfolio";
+
+const stats = [
+  { value: "2+ yrs", label: "Shipping" },
+  { value: `${projects.length}`, label: "Projects" },
+  { value: "1", label: "AI Hackathon" },
+];
 
 const roles = [
-  "AI-First Software Developer | Aspiring AI Engineer | LLM Builder",
+  "Full-Stack Developer & AI Engineer | LLM Builder",
   "Figma to production Next.js",
   "Based in Quezon City, Philippines",
 ];
@@ -82,7 +88,7 @@ export default function About() {
 
         <div className="flex min-w-0 flex-col gap-1 md:col-start-1 md:row-start-2 md:gap-3.5">
           <h1 className="text-[26px] font-normal leading-tight tracking-[-0.02em] md:text-[34px]">
-            Zein Khalid
+            Zein Khalid Bulaclac
           </h1>
           <div className="grid text-[13px] leading-snug text-pretty text-zinc-400 md:leading-relaxed">
             <span aria-hidden className="invisible col-start-1 row-start-1">
@@ -90,14 +96,14 @@ export default function About() {
             </span>
             <span className="col-start-1 row-start-1" aria-label={roles[0]}>
               {roleText}
-              <span className="ml-0.5 inline-block h-[13px] w-px animate-pulse bg-zinc-400 align-[-2px]" />
+              <span className="ml-0.5 inline-block h-[13px] w-0.5 animate-pulse bg-[#b36800] align-[-2px]" />
             </span>
           </div>
         </div>
 
         <div className="col-span-2 flex min-w-0 flex-col gap-4 md:col-span-1 md:col-start-1 md:row-start-3 md:gap-3.5">
           <p className="max-w-[400px] text-[14px] leading-[1.65] text-pretty text-[#b4b4bc] md:mt-1 md:leading-[1.7]">
-            I&apos;m an AI-first software developer and aspiring AI engineer, building
+            I&apos;m a full-stack developer and AI engineer, building
             with LLMs. I also design and ship front-end and full-stack products,
             most recently responsive Next.js features across three Filinvest Land
             websites.
@@ -107,17 +113,53 @@ export default function About() {
               type="button"
               onClick={() => setContactsOpen((v) => !v)}
               aria-expanded={contactsOpen}
-              className={`${pill} min-h-11 rounded-full border border-zinc-700 px-5 text-[13px] text-zinc-200 md:min-h-[38px]`}
+              className="min-h-11 rounded-full bg-white px-5 text-[13px] font-medium text-black transition-colors hover:bg-white/85 md:min-h-[38px]"
             >
               Contacts
             </button>
             <a
               href="#projects"
-              className={`${pill} inline-flex min-h-11 items-center rounded-full border border-[#1f1f1f] px-5 text-[13px] text-zinc-400 md:min-h-[38px]`}
+              className="inline-flex min-h-11 items-center rounded-full border border-white/20 px-5 text-[13px] text-zinc-300 transition-colors hover:border-white/40 hover:text-white md:min-h-[38px]"
             >
               View projects
             </a>
+            <a
+              href="/resume.pdf"
+              download="Zein-Khalid-Bulaclac-Resume.pdf"
+              className="inline-flex min-h-11 items-center rounded-full border border-white/20 px-5 text-[13px] text-zinc-300 transition-colors hover:border-white/40 hover:text-white md:min-h-[38px]"
+            >
+              Résumé
+            </a>
           </div>
+          <dl className="mt-3 grid grid-cols-3 border-y border-line">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={`flex flex-col gap-2 py-5 ${
+                  i > 0 ? "border-l border-line pl-4 sm:pl-5" : "pr-2"
+                }`}
+              >
+                <dd className="flex items-start gap-1 text-[22px] leading-none text-white sm:text-[26px]">
+                  {s.value}
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.6}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mt-0.5 size-3 text-[#b36800]/70"
+                    aria-hidden
+                  >
+                    <path d="M7 17 17 7M8 7h9v9" />
+                  </svg>
+                </dd>
+                <dt className="text-[10px] uppercase tracking-[0.12em] text-white/50 sm:text-[11px]">
+                  {s.label}
+                </dt>
+              </div>
+            ))}
+          </dl>
           {contactsOpen && (
             <div className="flex max-w-[420px] flex-wrap items-center gap-2.5 rounded-xl border border-[#1f1f1f] bg-[#080808] px-3.5 py-3">
               <span className="min-w-0 flex-[1_1_200px] break-all text-[13px] text-zinc-200">

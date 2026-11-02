@@ -10,7 +10,7 @@ export default function Faq() {
   return (
     <div className="flex flex-col gap-3">
       <h3 className="text-[13px] text-muted">FAQs</h3>
-      <div className="overflow-hidden rounded-[22px] border border-line bg-surface">
+      <div className="overflow-hidden rounded-[22px] glass">
         {faqs.map((f, i) => {
           const isOpen = open === i;
           return (

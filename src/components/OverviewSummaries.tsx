@@ -1,12 +1,14 @@
 import Chip from "./Chip";
 import OverviewSection from "./OverviewSection";
 import ProjectCarousel from "./ProjectCarousel";
+import Testimonials from "./Testimonials";
 import {
   certifications,
   degree,
   experiences,
   projects,
   stackHighlights,
+  testimonials,
 } from "@/data/portfolio";
 
 export function ProjectsSummary() {
@@ -17,7 +19,7 @@ export function ProjectsSummary() {
       href="/projects"
       cta="View All Projects"
     >
-      <ProjectCarousel projects={projects.slice(0, 3)} />
+      <ProjectCarousel projects={projects.slice(0, 6)} />
     </OverviewSection>
   );
 }
@@ -86,4 +88,8 @@ export function StacksSummary() {
       </div>
     </OverviewSection>
   );
+}
+
+export function TestimonialsSummary() {
+  return <Testimonials items={testimonials} />;
 }

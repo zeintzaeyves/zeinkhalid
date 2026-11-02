@@ -67,7 +67,7 @@ export default function EducationSection() {
 
       <div id="degree" className="flex scroll-mt-20 flex-col gap-4">
         <h3 className="text-base font-medium">Degree</h3>
-        <article className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-5 transition-colors hover:border-white/30">
+        <article className="flex flex-col gap-3 rounded-2xl glass p-5 transition-colors hover:border-white/30">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h4 className="text-[15px] font-medium">
               {degree.school} · {degree.program}
@@ -78,7 +78,7 @@ export default function EducationSection() {
             {degree.note}
           </p>
           {showDetails && (
-            <ul className="list-disc space-y-1.5 pl-4 text-[13px] leading-relaxed text-muted marker:text-subtle">
+            <ul className="list-disc space-y-1.5 pl-4 text-[13px] leading-relaxed text-muted marker:text-[#b36800]">
               {degree.details.map((d) => (
                 <li key={d}>{d}</li>
               ))}
@@ -88,7 +88,7 @@ export default function EducationSection() {
             type="button"
             aria-expanded={showDetails}
             onClick={() => setShowDetails((v) => !v)}
-            className="w-fit text-[13px] text-[#e68600] hover:underline"
+            className="w-fit text-[13px] text-[#b36800] hover:underline"
           >
             {showDetails ? "Hide details" : "Show details"}
           </button>
@@ -132,11 +132,11 @@ export default function EducationSection() {
           {visible.map((c) => (
             <article
               key={c.title}
-              className="group/art relative flex flex-col gap-3 rounded-2xl border border-line bg-surface p-5 transition-colors hover:border-white/30"
+              className="group/art relative flex flex-col gap-3 rounded-2xl glass p-5 transition-colors hover:border-white/30"
             >
               <span
                 aria-hidden
-                className="absolute -left-8 top-[22px] z-10 size-[13px] rounded-full bg-[#e68600] ring-4 ring-black"
+                className="absolute -left-8 top-[22px] z-10 size-[13px] rounded-full bg-[#b36800] ring-4 ring-black"
               />
               <span
                 aria-hidden
@@ -160,7 +160,7 @@ export default function EducationSection() {
 
       <div id="activities" className="flex scroll-mt-20 flex-col gap-4">
         <h3 className="text-base font-medium">Activities</h3>
-        <article className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-5 transition-colors hover:border-white/30">
+        <article className="flex flex-col gap-3 rounded-2xl glass p-5 transition-colors hover:border-white/30">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h4 className="text-[15px] font-medium">{activity.title}</h4>
             <span className="text-[13px] text-muted">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 type Props = {
   id: string;
@@ -27,9 +28,11 @@ export default function OverviewSection({
           className="group shrink-0 whitespace-nowrap text-[13px] text-muted transition-colors hover:text-white"
         >
           {cta}{" "}
-          <span className="inline-block transition-transform group-hover:translate-x-0.5">
-            →
-          </span>
+          <ArrowRight
+            className="inline size-3.5 align-[-2px] transition-transform group-hover:translate-x-0.5"
+            strokeWidth={1.8}
+            aria-hidden
+          />
         </Link>
       </div>
       {children}

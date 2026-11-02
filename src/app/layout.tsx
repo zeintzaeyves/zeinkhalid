@@ -17,9 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zein Khalid — Front-End & Full-Stack Developer",
+  title: "Zein Khalid — Full-Stack Developer & AI Engineer",
   description:
-    "Portfolio of Zein Khalid — front-end and full-stack developer and UI/UX designer in Quezon City, Philippines. Next.js, React, TypeScript and AI chatbots.",
+    "Portfolio of Zein Khalid — full-stack developer and AI engineer in Quezon City, Philippines. Next.js, React, TypeScript and AI chatbots.",
+  icons: { icon: "/icon.jpg", shortcut: "/icon.jpg", apple: "/icon.jpg" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -28,8 +29,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${poppins.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white">
-        <div className="flex-1 lg:pl-[21rem]">
+      <body className="min-h-full flex flex-col bg-transparent text-white">
+        <div className="app-shell flex-1 lg:pl-[21rem]">
           <Sidebar />
           <main className="mx-auto flex w-full max-w-[52rem] flex-col gap-14 px-4 pb-10 pt-10 sm:px-6 lg:pt-20">
             {children}

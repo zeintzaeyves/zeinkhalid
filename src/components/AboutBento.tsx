@@ -4,6 +4,7 @@ import ProfileCard from "./ProfileCard";
 import Chip from "./Chip";
 import InterestPictures from "./InterestPictures";
 import { interests, location, personal } from "@/data/portfolio";
+import { plainBackgrounds } from "@/lib/plain-backgrounds";
 
 const label =
   "text-[10px] uppercase tracking-[0.18em] text-subtle";
@@ -20,6 +21,7 @@ type MediaProps = {
   imageRatio?: number;
   imagePosition?: string;
   className?: string;
+  variant?: number;
 };
 
 function MediaCard({
@@ -31,9 +33,11 @@ function MediaCard({
   imageRatio,
   imagePosition,
   className = "",
+  variant = 0,
 }: MediaProps) {
   const card = (
     <div
+      style={image ? undefined : { background: plainBackgrounds[variant % plainBackgrounds.length] }}
       className={`${base} flex min-h-[11rem] flex-col justify-between bg-[#0e0e0e] p-5 sm:min-h-[15rem] ${
         image ? "w-full" : className
       }`}
@@ -97,6 +101,7 @@ export default function AboutBento() {
           title={personal.shipped.title}
           note={personal.shipped.note}
           image={personal.shipped.image}
+          variant={0}
           className="col-span-1"
         />
         <MediaCard
@@ -113,6 +118,7 @@ export default function AboutBento() {
           title={personal.focus.title}
           note={personal.focus.note}
           image={personal.focus.image}
+          variant={1}
           className="col-span-2"
         />
 

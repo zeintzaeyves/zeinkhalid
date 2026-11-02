@@ -9,7 +9,7 @@ const SWIPE = 40;
 const DRAG_START = 6;
 
 export default function ProjectCarousel({ projects }: { projects: Project[] }) {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(Math.floor((projects.length - 1) / 2));
   const start = useRef<number | null>(null);
   const moved = useRef(false);
   const t0 = useRef(0);
@@ -173,7 +173,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
               aria-label={`Go to ${p.title}`}
               onClick={() => go(i)}
               className={`size-1.5 rounded-full transition-colors ${
-                i === active ? "bg-white" : "bg-white/35 hover:bg-white/60"
+                i === active ? "bg-[#b36800]" : "bg-white/35 hover:bg-white/60"
               }`}
             />
           ))}

@@ -1,3 +1,4 @@
+import ResourceIcon from "./ResourceIcon";
 import { resources } from "@/data/portfolio";
 
 export default function ResourcesSection() {
@@ -13,7 +14,7 @@ export default function ResourcesSection() {
       {resources.map((group) => (
         <div key={group.title} className="flex flex-col gap-3">
           <h3 className="text-[13px] text-muted">{group.title}</h3>
-          <div className="overflow-hidden rounded-2xl border border-line bg-surface">
+          <div className="overflow-hidden rounded-2xl glass">
             {group.items.map((item, i) => {
               return (
                 <a
@@ -25,6 +26,7 @@ export default function ResourcesSection() {
                     i > 0 ? "border-t border-line" : ""
                   }`}
                 >
+                  <ResourceIcon name={item.name} />
                   <span className="min-w-0 flex-1">
                     <span className="block truncate text-[15px] font-medium">
                       {item.name}

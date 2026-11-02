@@ -1,11 +1,14 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { personal } from "@/data/portfolio";
+import { plainBackgrounds } from "@/lib/plain-backgrounds";
 
 export default function ProfileCard({ className = "" }: { className?: string }) {
   const { profile } = personal;
 
   return (
     <div
+      style={{ background: plainBackgrounds[2] }}
       className={`relative isolate flex min-h-[26rem] sm:min-h-[28rem] flex-col justify-between overflow-hidden rounded-[28px] border border-line bg-[#0e0e0e] p-5 ${className}`}
     >
       <div className="mt-auto flex flex-col gap-4">
@@ -26,7 +29,7 @@ export default function ProfileCard({ className = "" }: { className?: string }) 
             className="inline-flex h-9 items-center gap-1.5 rounded-full bg-white px-4 text-[13px] font-medium text-black transition-colors hover:bg-white/90"
           >
             Get in touch
-            <span aria-hidden>↗</span>
+            <ArrowUpRight className="size-3.5" strokeWidth={1.8} aria-hidden />
           </Link>
           <span className="inline-flex h-9 items-center rounded-full border border-white/20 bg-black/30 px-3.5 text-[13px] text-white/80 backdrop-blur-sm">
             Since {profile.since}

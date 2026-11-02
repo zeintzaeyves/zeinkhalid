@@ -17,7 +17,7 @@ export default function Footer() {
             <span className="text-[15px] font-medium">Zein Khalid</span>
           </div>
           <p className="text-[13px] leading-relaxed text-muted">
-            AI-first software developer and aspiring AI engineer, building with
+            Full-stack developer and AI engineer, building with
             LLMs.
           </p>
         </div>

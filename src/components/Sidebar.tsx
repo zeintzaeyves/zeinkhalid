@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavItem from "./NavItem";
-import { Mail } from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
 import { email, navGroups } from "@/data/portfolio";
 
 // Flat surface for the Ask Zein pill.
@@ -27,15 +27,35 @@ function PanelToggleIcon() {
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    if (collapsed) document.documentElement.dataset.sidebar = "collapsed";
+    else delete document.documentElement.dataset.sidebar;
+  }, [collapsed]);
+
+  // Lock page scroll while the full-screen mobile menu is open.
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
+
+  const closeOrCollapse = () => {
+    setOpen(false);
+    if (window.matchMedia("(min-width: 1024px)").matches) setCollapsed(true);
+  };
 
   return (
     <>
       {/* Mobile top bar */}
-      <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-line bg-black/90 px-4 py-2 backdrop-blur lg:hidden">
-        <div className="min-w-0 leading-tight">
-          <p className="truncate text-sm font-medium">Zein Khalid</p>
-          <p className="truncate text-[11px] text-subtle">AI-First Software Developer</p>
-        </div>
+      <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-line bg-black/40 px-4 py-2 backdrop-blur-xl lg:hidden">
+        <p className="truncate text-[18px] font-semibold tracking-tight">
+          Zein Khalid.
+        </p>
         <button
           type="button"
           aria-label="Toggle navigation"
@@ -43,33 +63,51 @@ export default function Sidebar() {
           onClick={() => setOpen((v) => !v)}
           className="-mr-1.5 shrink-0 rounded-xl p-2.5 text-white/80 transition-[background-color,transform] duration-200 hover:bg-white/[0.08] active:scale-90 active:bg-white/[0.14]"
         >
-          <PanelToggleIcon />
+          <Menu className="size-[22px]" strokeWidth={1.8} aria-hidden />
         </button>
       </header>
 
-      {open && (
+      {collapsed && (
         <button
           type="button"
-          aria-label="Close navigation"
-          onClick={() => setOpen(false)}
-          className="fixed inset-0 z-30 bg-black/70 lg:hidden"
-        />
+          aria-label="Open sidebar"
+          onClick={() => setCollapsed(false)}
+          className="fixed left-4 top-4 z-30 hidden rounded-lg border border-line bg-black p-2 text-white/70 transition-colors hover:bg-white/[0.08] hover:text-white lg:block"
+        >
+          <PanelToggleIcon />
+        </button>
       )}
 
       <aside
-        className={`fixed inset-y-3 left-3 z-40 flex w-[min(19rem,calc(100vw-1.5rem))] flex-col rounded-2xl border border-line bg-surface p-3 transition-transform duration-200 lg:left-5 lg:top-5 lg:bottom-5 lg:w-72 lg:translate-x-0 ${
-          open ? "translate-x-0" : "-translate-x-[110%]"
+        className={`fixed inset-0 z-40 flex w-full flex-col bg-black/95 px-4 pb-4 pt-2 backdrop-blur-2xl lg:p-4 transition-[opacity,transform] duration-200 lg:inset-y-0 lg:right-auto lg:w-72 lg:border-r lg:border-line lg:bg-black lg:opacity-100 lg:backdrop-blur-none ${
+          collapsed ? "lg:-translate-x-full" : "lg:translate-x-0"
+        } ${
+          open
+            ? "opacity-100"
+            : "pointer-events-none opacity-0 lg:pointer-events-auto"
         }`}
       >
-        <div className="px-2 leading-tight">
-          <p className="text-[15px] font-medium">Zein Khalid</p>
-          <p className="mt-0.5 text-[12px] text-subtle">AI-First Software Developer</p>
+        <div className="flex items-center justify-between lg:px-2 lg:pt-1">
+          <p className="text-[18px] font-semibold tracking-tight text-white">
+            Zein Khalid.
+          </p>
+          <button
+            type="button"
+            aria-label="Close navigation"
+            onClick={closeOrCollapse}
+            className="-mr-1 rounded-xl p-2.5 text-white/80 transition-colors hover:bg-white/[0.08] hover:text-white lg:mr-0 lg:rounded-md lg:p-1.5 lg:text-white/40"
+          >
+            <X className="size-[22px] lg:hidden" strokeWidth={1.8} aria-hidden />
+            <span className="hidden lg:block">
+              <PanelToggleIcon />
+            </span>
+          </button>
         </div>
 
-        <nav className="mt-3 flex-1 space-y-5 overflow-y-auto">
+        <nav className="mt-5 flex-1 space-y-6 overflow-y-auto">
           {navGroups.map((group) => (
             <div key={group.title} className="flex flex-col gap-1">
-              <p className="px-2 pb-1 text-[11px] text-subtle">
+              <p className="px-3 pb-1 text-[11px] font-medium uppercase tracking-wider text-subtle">
                 {group.title}
               </p>
               {group.links.map((link) => (
@@ -113,10 +151,22 @@ export default function Sidebar() {
 
         <a
           href={`mailto:${email}`}
-          className="mt-3 flex items-center gap-2 px-1 text-[12px]"
+          className="mt-3 flex items-center gap-3 rounded-xl bg-white/[0.06] p-2.5 transition-colors hover:bg-white/[0.1]"
         >
-          <Mail className="size-3.5 shrink-0" strokeWidth={1.7} aria-hidden />
-          <span className="truncate">{email}</span>
+          <img
+            src="/icon.jpg"
+            alt=""
+            className="size-10 shrink-0 rounded-lg object-cover"
+          />
+          <span className="min-w-0 flex-1 leading-tight">
+            <span className="block truncate text-[13px] font-medium text-white">
+              Zein Khalid
+            </span>
+            <span className="block truncate text-[12px] text-subtle">
+              {email}
+            </span>
+          </span>
+          <ChevronRight className="size-4 shrink-0 text-white/40" aria-hidden />
         </a>
       </aside>
     </>

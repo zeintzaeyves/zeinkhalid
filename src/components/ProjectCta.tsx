@@ -13,7 +13,7 @@ export default function ProjectCta({
   return (
     <section
       id={id}
-      className="relative isolate flex scroll-mt-20 flex-col items-start gap-6 overflow-hidden rounded-[28px] border border-line bg-surface p-6 sm:p-8"
+      className="relative isolate flex scroll-mt-20 flex-col items-start gap-6 overflow-hidden rounded-[28px] glass p-6 sm:p-8"
     >
       <Image
         src="/gallery/archi.jpg"
@@ -28,7 +28,7 @@ export default function ProjectCta({
       />
 
       <div className="flex flex-col gap-2">
-        <h2 className="text-[22px] font-semibold tracking-tight">
+        <h2 className="text-[22px] font-semibold tracking-tight sm:text-2xl">
           Have a project in mind?
         </h2>
         <p className="max-w-xs text-[13px] leading-relaxed text-white/65">

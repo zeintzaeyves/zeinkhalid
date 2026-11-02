@@ -19,10 +19,10 @@ export default function NavItem({
       href={href}
       onClick={onClick}
       aria-current={active ? "page" : undefined}
-      className={`group flex items-center gap-2.5 rounded-lg px-3.5 py-2.5 text-[13px] transition-[color,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.96] ${
+      className={`group flex items-center gap-3 rounded-lg px-3 py-2.5 text-[14px] transition-[color,background-color,transform] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.97] ${
         active
-          ? "font-medium text-white"
-          : "text-white/60 hover:text-white"
+          ? "bg-white/[0.08] font-medium text-white [&_svg]:text-[#b36800]"
+          : "text-white/60 hover:bg-white/[0.04] hover:text-white"
       }`}
     >
       <NavIcon name={icon} className="size-4 shrink-0" />

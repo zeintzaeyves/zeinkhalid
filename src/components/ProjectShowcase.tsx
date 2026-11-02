@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import Chip from "./Chip";
 import { projectBackground, projects, type Project } from "@/data/portfolio";
 
@@ -84,7 +85,7 @@ export default function ProjectShowcase() {
       {rest.length > 0 && (
         <div className="flex flex-col gap-3">
           <h3 className="text-[13px] text-muted">More projects</h3>
-          <div className="overflow-hidden rounded-2xl border border-line bg-surface">
+          <div className="overflow-hidden rounded-2xl glass">
             {rest.map((p, i) => {
               const isOpen = openRow === p.title;
               return (
@@ -140,7 +141,7 @@ export default function ProjectShowcase() {
                           <button
                             type="button"
                             onClick={() => window.dispatchEvent(new Event("open-ask"))}
-                            className="w-fit text-[13px] text-[#e68600] hover:underline"
+                            className="w-fit text-[13px] text-[#b36800] hover:underline"
                           >
                             Ask Zein
                           </button>
@@ -150,9 +151,10 @@ export default function ProjectShowcase() {
                             href={p.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-fit text-[13px] text-[#e68600] hover:underline"
+                            className="w-fit text-[13px] text-[#b36800] hover:underline"
                           >
-                            Open project ↗
+                            Open project
+<ArrowUpRight className="ml-1 inline size-3.5 align-[-2px]" strokeWidth={1.8} aria-hidden />
                           </a>
                         )}
                       </div>
@@ -175,7 +177,7 @@ export default function ProjectShowcase() {
             aria-modal="true"
             aria-label={current.title}
             onClick={(e) => e.stopPropagation()}
-            className="flex max-h-[88vh] w-full max-w-xl flex-col overflow-hidden rounded-t-[28px] border border-white/10 bg-[#111] sm:rounded-[28px]"
+            className="flex max-h-[88vh] w-full max-w-xl flex-col overflow-hidden rounded-t-[28px] glass sm:rounded-[28px]"
           >
             <div
               className="relative flex min-h-40 flex-col justify-end p-5"
@@ -241,7 +243,8 @@ export default function ProjectShowcase() {
                   rel="noreferrer"
                   className="mt-1 inline-flex h-11 items-center justify-center rounded-full bg-white text-[14px] font-medium text-black transition-colors hover:bg-white/90"
                 >
-                  Open project ↗
+                  Open project
+<ArrowUpRight className="ml-1 inline size-3.5 align-[-2px]" strokeWidth={1.8} aria-hidden />
                 </a>
               )}
             </div>

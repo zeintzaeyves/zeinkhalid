@@ -19,7 +19,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Services: grouped list */}
-      <div className="overflow-hidden rounded-2xl border border-line bg-surface">
+      <div className="overflow-hidden rounded-2xl glass">
         {services.map((s, i) => (
           <article
             key={s.title}
@@ -47,7 +47,7 @@ export default function ServicesPage() {
       {/* How I work */}
       <div className="flex flex-col gap-3">
         <h3 className="text-[13px] text-muted">How I work</h3>
-        <ol className="rounded-2xl border border-line bg-surface px-5 py-5">
+        <ol className="rounded-2xl glass px-5 py-5">
           {howIWork.map((step, i) => {
             const last = i === howIWork.length - 1;
             return (
@@ -55,12 +55,12 @@ export default function ServicesPage() {
                 {!last && (
                   <span
                     aria-hidden
-                    className="absolute bottom-0 left-[6px] top-5 w-px bg-[#e68600]/30"
+                    className="absolute bottom-0 left-[6px] top-5 w-px bg-[#b36800]/30"
                   />
                 )}
                 <span
                   aria-hidden
-                  className="relative z-10 mt-1 size-[13px] shrink-0 rounded-full border-2 border-[#e68600] bg-surface"
+                  className="relative z-10 mt-1 size-[13px] shrink-0 rounded-full border-2 border-[#b36800] bg-surface"
                 />
                 <div className={`min-w-0 ${last ? "" : "pb-6"}`}>
                   <p className="text-[15px] font-medium">{step.title}</p>

@@ -5,6 +5,7 @@ import {
   ExperienceSummary,
   ProjectsSummary,
   StacksSummary,
+  TestimonialsSummary,
 } from "@/components/OverviewSummaries";
 
 export default function Home() {
@@ -19,6 +20,8 @@ export default function Home() {
         <EducationSummary />
 
         <StacksSummary />
+
+        <TestimonialsSummary />
 
         <ProjectCta
           id="contact"
