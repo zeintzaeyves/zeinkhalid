@@ -84,19 +84,28 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
               transform: `translate3d(calc(-50% + var(--w) * ${offset * 0.74} + ${drag}px), -50%, ${offset === 0 ? 0 : -60}px) rotateY(${-offset * 16}deg) scale(${offset === 0 ? 1 : 0.84})`,
               willChange: "transform, opacity",
               zIndex: 10 - abs,
-              opacity: abs > 1 ? 0 : offset === 0 ? 1 : 0.7,
+              opacity: abs > 1 ? 0 : 1,
               pointerEvents: abs > 1 ? "none" : "auto",
             } as React.CSSProperties,
-            className: `absolute left-1/2 top-1/2 flex cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden rounded-[32px] border border-white/10 p-6 text-center shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] transition-[transform,opacity,border-color] ${
+            className: `absolute left-1/2 top-1/2 flex cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden rounded-[32px] p-6 text-center shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1),0_20px_50px_-20px_rgba(0,0,0,0.9)] transition-[transform,opacity,box-shadow] ${
               dragging
                 ? "duration-0"
                 : "duration-[650ms] ease-[cubic-bezier(0.25,0.8,0.25,1)]"
             } ${
-              offset === 0 ? "hover:border-white/30" : ""
+              offset === 0
+                ? "hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.3),0_20px_50px_-20px_rgba(0,0,0,0.9)]"
+                : ""
             }`,
           };
           const inner = (
             <>
+              {/* Dark veil over every card except the active one. */}
+              <span
+                aria-hidden
+                className={`pointer-events-none absolute inset-0 bg-black transition-opacity duration-[650ms] ${
+                  offset === 0 ? "opacity-0" : "opacity-65"
+                }`}
+              />
               <span
                 className={`text-xl font-semibold leading-tight tracking-tight text-white transition-opacity duration-300 ${
                   offset === 0 ? "opacity-100" : "opacity-0"

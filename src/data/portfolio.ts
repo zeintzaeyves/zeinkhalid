@@ -70,7 +70,10 @@ export type Project = {
 /** Card background: the project cover (dimmed for legible text) or a gradient. */
 export function projectBackground(p: Project, i: number): string {
   if (p.image) {
-    return `linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.82) 100%) center / cover no-repeat, url(${p.image}) center / cover no-repeat`;
+    // border-box: both layers paint under the card border too. With the default
+    // padding-box the image spills into the border strip while the dark gradient
+    // does not, which leaves a bright, undimmed edge.
+    return `linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.82) 100%) center / cover no-repeat border-box, url(${p.image}) center / cover no-repeat border-box`;
   }
   return projectGradients[i % projectGradients.length];
 }
