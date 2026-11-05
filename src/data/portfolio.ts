@@ -91,7 +91,7 @@ export const projects: Project[] = [
   {
     title: "Jetour Flight Booking System",
     category: "Web",
-    href: "https://jetour-flight-booking-system-lbfc.vercel.app/",
+    href: "https://jetour-flight-booking-system-p1c1j7btz-zeins-projects-404c9bac.vercel.app/",
     image: "/gallery/jetour.png",
     description:
       "A web-based flight booking system where users search available flights, manage passenger information and complete bookings, with responsive interfaces and backend support for schedules and reservations.",
