@@ -21,6 +21,21 @@ export const metadata: Metadata = {
   title: "Zein Khalid — Full-Stack Developer & Aspiring AI Engineer",
   description:
     "Portfolio of Zein Khalid — full-stack developer and aspiring AI engineer in Quezon City, Philippines. Next.js, React, TypeScript and AI chatbots.",
+  metadataBase: new URL("https://zeinkhalid.com"),
+  openGraph: {
+    title: "Zein Khalid — Full-Stack Developer & Aspiring AI Engineer",
+    description:
+      "Portfolio of Zein Khalid — full-stack developer and aspiring AI engineer in Quezon City, Philippines.",
+    url: "/",
+    siteName: "Zein Khalid",
+    type: "website",
+    images: [{ url: "/covert.jpg", width: 3024, height: 3024, alt: "Zein Khalid" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zein Khalid — Full-Stack Developer & Aspiring AI Engineer",
+    images: ["/covert.jpg"],
+  },
   icons: { icon: "/icon.jpg", shortcut: "/icon.jpg", apple: "/icon.jpg" },
 };
 

@@ -53,8 +53,8 @@ export default function Sidebar() {
     <>
       {/* Mobile top bar */}
       <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-line bg-black/40 px-4 py-2 backdrop-blur-xl lg:hidden">
-        <p className="truncate text-[18px] font-semibold tracking-tight">
-          Zein Khalid.
+        <p className="truncate text-[15px] font-normal tracking-[-0.01em] text-white/90">
+          Zein Khalid
         </p>
         <button
           type="button"
@@ -88,8 +88,8 @@ export default function Sidebar() {
         }`}
       >
         <div className="flex items-center justify-between lg:px-2 lg:pt-1">
-          <p className="text-[18px] font-semibold tracking-tight text-white">
-            Zein Khalid.
+          <p className="text-[15px] font-normal tracking-[-0.01em] text-white/90">
+            Zein Khalid
           </p>
           <button
             type="button"
