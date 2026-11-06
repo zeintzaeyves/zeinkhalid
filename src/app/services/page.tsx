@@ -55,12 +55,12 @@ export default function ServicesPage() {
                 {!last && (
                   <span
                     aria-hidden
-                    className="absolute bottom-0 left-[6px] top-5 w-px bg-[#b36800]/30"
+                    className="absolute bottom-0 left-[6px] top-5 w-px bg-[#ffffff]/30"
                   />
                 )}
                 <span
                   aria-hidden
-                  className="relative z-10 mt-1 size-[13px] shrink-0 rounded-full border-2 border-[#b36800] bg-surface"
+                  className="relative z-10 mt-1 size-[13px] shrink-0 rounded-full border-2 border-[#ffffff] bg-surface"
                 />
                 <div className={`min-w-0 ${last ? "" : "pb-6"}`}>
                   <p className="text-[15px] font-medium">{step.title}</p>

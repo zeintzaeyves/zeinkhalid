@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import AskOverlay from "@/components/AskOverlay";
+import IntroLoader from "@/components/IntroLoader";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -17,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zein Khalid — Full-Stack Developer & AI Engineer",
+  title: "Zein Khalid — Full-Stack Developer & Aspiring AI Engineer",
   description:
-    "Portfolio of Zein Khalid — full-stack developer and AI engineer in Quezon City, Philippines. Next.js, React, TypeScript and AI chatbots.",
+    "Portfolio of Zein Khalid — full-stack developer and aspiring AI engineer in Quezon City, Philippines. Next.js, React, TypeScript and AI chatbots.",
   icons: { icon: "/icon.jpg", shortcut: "/icon.jpg", apple: "/icon.jpg" },
 };
 
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Footer />
         </div>
         <AskOverlay />
+        <IntroLoader />
       </body>
     </html>
   );

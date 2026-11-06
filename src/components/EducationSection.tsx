@@ -78,7 +78,7 @@ export default function EducationSection() {
             {degree.note}
           </p>
           {showDetails && (
-            <ul className="list-disc space-y-1.5 pl-4 text-[13px] leading-relaxed text-muted marker:text-[#b36800]">
+            <ul className="list-disc space-y-1.5 pl-4 text-[13px] leading-relaxed text-muted marker:text-[#ffffff]">
               {degree.details.map((d) => (
                 <li key={d}>{d}</li>
               ))}
@@ -88,7 +88,7 @@ export default function EducationSection() {
             type="button"
             aria-expanded={showDetails}
             onClick={() => setShowDetails((v) => !v)}
-            className="w-fit text-[13px] text-[#b36800] hover:underline"
+            className="w-fit text-[13px] text-[#ffffff] hover:underline"
           >
             {showDetails ? "Hide details" : "Show details"}
           </button>
@@ -136,7 +136,7 @@ export default function EducationSection() {
             >
               <span
                 aria-hidden
-                className="absolute -left-8 top-[22px] z-10 size-[13px] rounded-full bg-[#b36800] ring-4 ring-black"
+                className="absolute -left-8 top-[22px] z-10 size-[13px] rounded-full bg-[#ffffff] ring-4 ring-black"
               />
               <span
                 aria-hidden

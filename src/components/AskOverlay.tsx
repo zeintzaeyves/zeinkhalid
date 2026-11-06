@@ -39,7 +39,7 @@ function answer(q: string): string {
     return `Most recently I was a ${f.role} at ${f.company} (${f.period}), building features for the Futura, Aspire and Prestige websites. Before that: freelance front-end, full-stack and UI/UX work, plus technical support at Bangko Mabuhay.`;
   }
   if (has("build", "elevate", "gym", "currently", "working on", "now")) {
-    return `Right now I'm building ${personal.building.title}, an ${personal.building.note.toLowerCase()}. I'm also focused on AI engineering: LLM apps and chatbots.`;
+    return `Right now I'm building ${personal.building.title}, an ${personal.building.note.toLowerCase()}. I'm also learning AI engineering: LLM apps and chatbots.`;
   }
   if (has("project", "portfolio", "made", "built", "shipped")) {
     return `A few projects: ${projects
@@ -65,10 +65,10 @@ function answer(q: string): string {
     return `The quickest way is email: ${email}. You can also find me on LinkedIn.`;
   }
   if (has("ai", "llm", "chatbot", "claude")) {
-    return "I'm a full-stack developer and AI engineer: I build LLM-powered chatbots and web products.";
+    return "I'm a full-stack developer and an aspiring AI engineer: I build web products and I'm learning to build LLM-powered chatbots.";
   }
   if (has("hi", "hello", "hey", "who are you", "about you")) {
-    return "Hi! I'm Zein, a full-stack developer and AI engineer in Quezon City. Ask me about my work, stack or projects.";
+    return "Hi! I'm Zein, a full-stack developer and aspiring AI engineer in Quezon City. Ask me about my work, stack or projects.";
   }
   return `I don't have an answer for that yet. Try asking about my stack, work, projects or availability, or email me at ${email}.`;
 }

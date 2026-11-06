@@ -20,8 +20,8 @@
 html {
   background-color: #000;
   background-image:
-    radial-gradient(60rem 40rem at 85% -10%, rgb(179 104 0 / 0.16), transparent 60%),
-    radial-gradient(50rem 40rem at -10% 110%, rgb(179 104 0 / 0.12), transparent 60%);
+    radial-gradient(60rem 40rem at 85% -10%, rgb(255 255 255 / 0.06), transparent 60%),
+    radial-gradient(50rem 40rem at -10% 110%, rgb(255 255 255 / 0.04), transparent 60%);
   background-attachment: fixed;
   color-scheme: dark;
   scrollbar-gutter: stable;
@@ -140,7 +140,7 @@ body {
   list-style: decimal;
 }
 .ask-md a {
-  color: #b36800;
+  color: #ffffff;
   text-decoration: underline;
   text-underline-offset: 2px;
 }

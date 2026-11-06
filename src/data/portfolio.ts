@@ -355,7 +355,7 @@ export const services: { title: string; description: string; tools: string[] }[]
 ];
 
 export const projectGradients = [
-  "linear-gradient(160deg,#3a3a3d 0%,#18181b 45%,#b36800 150%)",
+  "linear-gradient(160deg,#3a3a3d 0%,#18181b 45%,#6b6b70 150%)",
   "linear-gradient(160deg,#1f2a37 0%,#0e1116 50%,#3b82f6 160%)",
   "linear-gradient(160deg,#2b1f33 0%,#120c16 50%,#c026d3 160%)",
   "linear-gradient(160deg,#1c2e26 0%,#0b1310 50%,#10b981 160%)",
@@ -476,10 +476,10 @@ export const howIWork: { title: string; note: string }[] = [
 export const personal = {
   profile: {
     name: "Zein Khalid",
-    role: "Full-stack developer and AI engineer",
+    role: "Full-stack developer and aspiring AI engineer",
     city: "Quezon City",
     badge: "Open to work",
-    bio: "Front-end and full-stack developer, UI/UX designer, and builder of AI-powered chatbots.",
+    bio: "Front-end and full-stack developer, UI/UX designer, and aspiring AI engineer building AI-powered chatbots.",
     since: "2024",
   },
   shipped: {
@@ -499,7 +499,7 @@ export const personal = {
   },
   focus: {
     label: "Currently focused on",
-    title: "AI Engineering",
+    title: "Learning AI Engineering",
     note: "LLM apps and chatbots",
     image: undefined as string | undefined,
   },

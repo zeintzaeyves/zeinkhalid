@@ -81,7 +81,7 @@ export default function ExperienceSection() {
           >
             <span
               aria-hidden
-              className="absolute -left-8 top-[22px] z-10 size-[13px] rounded-full bg-[#b36800] ring-4 ring-black"
+              className="absolute -left-8 top-[22px] z-10 size-[13px] rounded-full bg-[#ffffff] ring-4 ring-black"
             />
             <span
               aria-hidden
@@ -96,7 +96,7 @@ export default function ExperienceSection() {
             <p className="text-[13px] leading-relaxed text-white/80">
               {exp.summary}
             </p>
-            <ul className="list-disc space-y-1.5 pl-4 text-[13px] leading-relaxed text-muted marker:text-[#b36800]">
+            <ul className="list-disc space-y-1.5 pl-4 text-[13px] leading-relaxed text-muted marker:text-[#ffffff]">
               {exp.points.map((p) => (
                 <li key={p}>{p}</li>
               ))}

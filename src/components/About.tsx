@@ -11,7 +11,7 @@ const stats = [
 ];
 
 const roles = [
-  "Full-Stack Developer & AI Engineer | LLM Builder",
+  "Full-Stack Developer | Aspiring AI Engineer",
   "Figma to production Next.js",
   "Based in Quezon City, Philippines",
 ];
@@ -96,15 +96,15 @@ export default function About() {
             </span>
             <span className="col-start-1 row-start-1" aria-label={roles[0]}>
               {roleText}
-              <span className="ml-0.5 inline-block h-[13px] w-0.5 animate-pulse bg-[#b36800] align-[-2px]" />
+              <span className="ml-0.5 inline-block h-[13px] w-0.5 animate-pulse bg-[#ffffff] align-[-2px]" />
             </span>
           </div>
         </div>
 
         <div className="col-span-2 flex min-w-0 flex-col gap-4 md:col-span-1 md:col-start-1 md:row-start-3 md:gap-3.5">
           <p className="max-w-[400px] text-[14px] leading-[1.65] text-pretty text-[#b4b4bc] md:mt-1 md:leading-[1.7]">
-            I&apos;m a full-stack developer and AI engineer, building
-            with LLMs. I also design and ship front-end and full-stack products,
+            I&apos;m a full-stack developer and an aspiring AI engineer, learning
+            to build with LLMs. I design and ship front-end and full-stack products,
             most recently responsive Next.js features across three Filinvest Land
             websites.
           </p>
@@ -148,7 +148,7 @@ export default function About() {
                     strokeWidth={1.6}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="mt-0.5 size-3 text-[#b36800]/70"
+                    className="mt-0.5 size-3 text-[#ffffff]/70"
                     aria-hidden
                   >
                     <path d="M7 17 17 7M8 7h9v9" />

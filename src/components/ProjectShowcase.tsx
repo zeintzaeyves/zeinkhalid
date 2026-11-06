@@ -141,7 +141,7 @@ export default function ProjectShowcase() {
                           <button
                             type="button"
                             onClick={() => window.dispatchEvent(new Event("open-ask"))}
-                            className="w-fit text-[13px] text-[#b36800] hover:underline"
+                            className="w-fit text-[13px] text-[#ffffff] hover:underline"
                           >
                             Ask Zein
                           </button>
@@ -151,7 +151,7 @@ export default function ProjectShowcase() {
                             href={p.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-fit text-[13px] text-[#b36800] hover:underline"
+                            className="w-fit text-[13px] text-[#ffffff] hover:underline"
                           >
                             Open project
 <ArrowUpRight className="ml-1 inline size-3.5 align-[-2px]" strokeWidth={1.8} aria-hidden />

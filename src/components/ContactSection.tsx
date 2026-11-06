@@ -15,7 +15,7 @@ import { email, linkedin, location } from "@/data/portfolio";
 
 function IconTile({ children }: { children: React.ReactNode }) {
   return (
-    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-[#b36800]/30 bg-[#b36800]/15 text-[#b36800]">
+    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-[#ffffff]/30 bg-[#ffffff]/15 text-[#ffffff]">
       {children}
     </span>
   );
@@ -55,7 +55,7 @@ export default function ContactSection() {
       <div className="glass relative isolate flex flex-col gap-6 overflow-hidden rounded-[28px] p-6 sm:p-8">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-24 -top-24 -z-10 size-72 rounded-full bg-[#b36800]/25 blur-3xl"
+          className="pointer-events-none absolute -right-24 -top-24 -z-10 size-72 rounded-full bg-[#ffffff]/25 blur-3xl"
         />
         <div className="flex flex-col gap-2">
           <h3 className="text-[28px] font-semibold leading-[1.1] tracking-tight sm:text-[36px]">
@@ -161,7 +161,7 @@ export default function ContactSection() {
           className="flex flex-col gap-3"
         >
           <h3 className="text-[13px] text-muted">Send a message</h3>
-          <div className="glass overflow-hidden rounded-[22px] focus-within:border-[#b36800]/50">
+          <div className="glass overflow-hidden rounded-[22px] focus-within:border-[#ffffff]/50">
             <input
               className={fieldCls}
               placeholder="Your name"

@@ -182,7 +182,7 @@ export default function ProjectCarousel({ projects }: { projects: Project[] }) {
               aria-label={`Go to ${p.title}`}
               onClick={() => go(i)}
               className={`size-1.5 rounded-full transition-colors ${
-                i === active ? "bg-[#b36800]" : "bg-white/35 hover:bg-white/60"
+                i === active ? "bg-[#ffffff]" : "bg-white/35 hover:bg-white/60"
               }`}
             />
           ))}
