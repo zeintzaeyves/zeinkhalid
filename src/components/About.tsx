@@ -124,8 +124,8 @@ export default function About() {
               View projects
             </a>
             <a
-              href="/resume.pdf"
-              download="Zein-Khalid-Bulaclac-Resume.pdf"
+              href="/Zein-dev.docx"
+              download="Zein-Khalid-Bulaclac-Resume.docx"
               className="inline-flex min-h-11 items-center rounded-full border border-white/20 px-5 text-[13px] text-zinc-300 transition-colors hover:border-white/40 hover:text-white md:min-h-[38px]"
             >
               Résumé
