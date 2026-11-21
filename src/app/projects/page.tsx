@@ -3,7 +3,10 @@ import ProjectShowcase from "@/components/ProjectShowcase";
 import { projects } from "@/data/portfolio";
 
 export const metadata: Metadata = {
-  title: "Projects — Zein Khalid",
+  title: "Projects",
+  alternates: { canonical: "/projects" },
+  description:
+    "Projects by Zein Khalid: flight booking system, real-estate sites, AI chatbot, dashboards and web redesigns built with Next.js and React.",
 };
 
 export default function ProjectsPage() {

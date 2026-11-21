@@ -34,7 +34,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5 text-[12px] text-subtle">
-        <span>© 2026 Zein Khalid. All rights reserved.</span>
+        <span>© 2026 Zein Khalid Bulaclac. All rights reserved.</span>
         <div className="flex items-center gap-4">
           {socials.map((s) => (
             <a

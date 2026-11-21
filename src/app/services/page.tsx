@@ -4,7 +4,10 @@ import ProjectCta from "@/components/ProjectCta";
 import { howIWork, services } from "@/data/portfolio";
 
 export const metadata: Metadata = {
-  title: "Services — Zein Khalid",
+  title: "Services",
+  alternates: { canonical: "/services" },
+  description:
+    "Services offered by Zein Khalid: front-end development, UI/UX design, full-stack apps and AI chatbots.",
 };
 
 export default function ServicesPage() {
